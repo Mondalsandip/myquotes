@@ -8,7 +8,6 @@ const QuoteDetail = () => {
     <div>
       Quote Details page
       <p>{param.quoteId}</p>
-      {console.log(param.quoteId)}
       <Route  path={`/quotes/:${param.quoteId}/comments`} >
         <Comments/>
 
