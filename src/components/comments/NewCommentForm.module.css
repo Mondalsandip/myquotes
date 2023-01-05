@@ -1,0 +1,36 @@
+.form{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    gap: 15px;
+}
+
+.form label{
+    font-weight: bold;
+
+
+}
+.form textarea{
+    font: inherit;
+  padding: 0.35rem;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  border: 1px solid #c1d1d1;
+  font-size: 1.25rem;
+  width: 98vw;
+
+}
+.form textarea:focus{
+    background-color: #cbf8f8;
+    outline-color: teal;
+
+}
+
+
+
+.form button{
+    font-size: 1.25rem;
+
+}

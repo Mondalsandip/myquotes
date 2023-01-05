@@ -1,0 +1,38 @@
+.header{
+    width: 100vw;
+    height: 5rem;
+    background-color:  #008080;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+
+}
+
+.logo{
+    font-size: 2rem;
+
+}
+
+.nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+.nav ul li{
+    list-style: none;
+    text-decoration: none;
+
+}
+.nav a{
+    text-decoration: none;
+    color: #88dfdf;
+}
+.nav a:hover,
+.nav a:active,
+.nav a.active {
+  color: #e6fcfc;
+}
+
