@@ -1,10 +1,9 @@
 import React from 'react'
+import QuoteForm from '../components/quotes/QuoteForm'
 
 const NewQuote = () => {
   return (
-    <div>
-      New Quotes
-    </div>
+    <QuoteForm />
   )
 }
 

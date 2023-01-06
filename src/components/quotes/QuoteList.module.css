@@ -1,0 +1,6 @@
+.list{
+    display: flex;
+    align-items: stretch;
+    flex-flow: column nowrap;
+    gap: 1.25rem;
+}

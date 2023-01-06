@@ -14,7 +14,7 @@ const NewCommentForm = () => {
     }
 
   return (
-    <div>
+    
         <form onSubmit={handleSubmit} className={classes.form}>
             <label htmlFor="text">Your Comment</label>
             <textarea id="text" cols="15" rows="8" ref={ref}></textarea>
@@ -24,7 +24,7 @@ const NewCommentForm = () => {
 
         </form>
       
-    </div>
+    
   )
 }
 

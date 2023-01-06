@@ -5,6 +5,7 @@
     justify-content: center;
     flex-flow: column nowrap;
     gap: 15px;
+    width: 100%;
 }
 
 .form label{
@@ -19,7 +20,7 @@
   background-color: #f0f0f0;
   border: 1px solid #c1d1d1;
   font-size: 1.25rem;
-  width: 98vw;
+  width: 100%;
 
 }
 .form textarea:focus{
