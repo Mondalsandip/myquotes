@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import LoadSpinner from '../UI/LoadSpinner'
 import { Prompt } from 'react-router-dom'
 
+
 const QuoteForm = (props) => {
     const text=useRef()
     const area=useRef()
@@ -26,6 +27,9 @@ const QuoteForm = (props) => {
     <Prompt when={isEntering} message={(location)=> 'Are you sure want to leave? All data will be lost.'}/>
     <Card>
         <form onFocus={handleFocus} onSubmit={submitFormHandler}>
+            {
+                props.isLoading && <div className={classes.loading}><LoadSpinner /> </div>
+            }
            
             <div className={classes.control}>
                 <label htmlFor="text">Author</label>

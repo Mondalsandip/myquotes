@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams,Route, useRouteMatch } from 'react-router-dom'
 import Comments from '../components/comments/Comments'
 import HighlitedQuotes from '../components/quotes/HighlitedQuotes'
 import { Link, useLocation, } from 'react-router-dom'
+import {getSingleQuote} from '../Libs/api'
+import useHttp from '../Hooks/use-http'
+import LoadSpinner from '../components/UI/LoadSpinner'
 
 const DUMMY_DATA=[
   {id:'q1', author:'Max', text:'Learning React is fun!'},
@@ -16,16 +19,30 @@ const QuoteDetail = () => {
     const param= useParams()
     const location= useLocation()
     const match =useRouteMatch()
-    console.log(location)
-    console.log('match', match)
-    const quote= DUMMY_DATA.find(item => item.id === param.quoteId) 
-  if(!quote){
+    const {quoteId}= param
+
+    const {sendRequest, status, data, error  }= useHttp(getSingleQuote,true)
+  useEffect(()=>{
+    sendRequest(quoteId)
+  },[sendRequest,quoteId])
+
+  if(status === 'pending'){
+    return <div className='centered'> <LoadSpinner/>  </div>
+  }
+
+  if(status === 'error'){
+    return <p className='centered focused'>{error}</p>
+  }
+
+
+  if(!data){
     <p>No Quote Found!</p>
   }    
 
+
   return (
     <div>
-      <HighlitedQuotes  text={quote.text}   author={quote.author}   />
+      <HighlitedQuotes  text={data.text}   author={data.author}   />
       <Route path={match.path} exact >
 
       <div className='centered'>  
